@@ -156,26 +156,6 @@
             text-decoration: underline;
         }
 
-        .visitor-count {
-            margin-top: 32px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-            font-size: 13px;
-            color: #999;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .visitor-count {
-                border-top: 1px solid rgba(255, 255, 255, 0.08);
-                color: #666;
-            }
-        }
-
-        .visitor-count strong {
-            color: #0071e3;
-            font-weight: 600;
-        }
-
         footer {
             display: flex;
             justify-content: space-between;
@@ -210,17 +190,6 @@
             }
         }
     </style>
-    <script>
-        // Simple visitor counter using a free API
-        fetch('https://api.countapi.xyz/hit/naveen-research.com/visits')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('visitor-count').textContent = data.value.toLocaleString();
-            })
-            .catch(() => {
-                document.getElementById('visitor-count').textContent = '---';
-            });
-    </script>
 </head>
 <body>
     <div class="container">
@@ -234,9 +203,6 @@
             <a href="https://www.linkedin.com/in/naveens72/" class="cta">View profile on LinkedIn →</a>
             <div class="contact">
                 <strong>Contact:</strong> <a href="mailto:naveenyes2003@gmail.com">naveenyes2003@gmail.com</a>
-            </div>
-            <div class="visitor-count">
-                Visitors: <strong id="visitor-count">Loading...</strong>
             </div>
             <footer>
                 <span>naveen-research.com</span>
