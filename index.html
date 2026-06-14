@@ -3,212 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naveen S – Security Research</title>
-    <meta name="description" content="Security research and coordinated vulnerability disclosure by Naveen S">
+    <title>Naveen S – Coordinated Vulnerability Disclosure</title>
+    <meta name="description" content="Security research and coordinated vulnerability disclosure by Naveen S. Contact: security@naveen-research.com">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #14110c;
+            color: #eedfc2;
+            font-family: 'Courier New', Courier, monospace;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8edf2 100%);
-            color: #1a1a1a;
+            padding: 24px;
         }
-
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-                color: #f5f5f5;
-            }
-        }
-
         .container {
             width: 100%;
-            max-width: 540px;
+            max-width: 560px;
         }
-
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 28px;
-            padding: 56px 48px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            text-align: center;
+        .archive-card {
+            border: 1px solid rgba(238, 223, 194, 0.42);
+            background-color: #1c1812;
+            padding: 56px;
+            position: relative;
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
         }
-
-        @media (prefers-color-scheme: dark) {
-            .card {
-                background: rgba(40, 40, 40, 0.95);
-                border: 1px solid rgba(255, 255, 255, 0.08);
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            }
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 6px 14px;
-            background: rgba(0, 0, 0, 0.05);
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 24px;
-            color: #666;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .badge {
-                background: rgba(255, 255, 255, 0.1);
-                color: #aaa;
-            }
-        }
-
         h1 {
-            font-size: 36px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            letter-spacing: -1px;
+            font-size: 34px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
         }
-
         .subtitle {
-            font-size: 17px;
-            color: #666;
-            margin-bottom: 40px;
-            font-weight: 400;
+            font-size: 14px;
+            color: #8a7b63;
+            margin-bottom: 34px;
         }
-
-        @media (prefers-color-scheme: dark) {
-            .subtitle {
-                color: #999;
-            }
-        }
-
-        .note {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #555;
-            margin-bottom: 36px;
-            max-width: 460px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .note {
-                color: #aaa;
-            }
-        }
-
-        .cta {
-            display: inline-block;
-            padding: 16px 32px;
-            background: #0071e3;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 14px;
+        .body-text {
             font-size: 16px;
-            font-weight: 500;
-            transition: all 0.2s ease;
+            line-height: 1.6;
+            margin-bottom: 36px;
+            border-top: 1px dashed #eedfc2;
+            border-bottom: 1px dashed #eedfc2;
+            padding: 20px 0;
         }
-
-        .cta:hover {
-            background: #0077ed;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
-        }
-
-        .cta:active {
-            transform: translateY(0);
-        }
-
-        .contact {
-            margin-top: 32px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        .contact-channel {
             font-size: 15px;
-            color: #666;
+            margin-bottom: 32px;
         }
-
-        @media (prefers-color-scheme: dark) {
-            .contact {
-                border-top: 1px solid rgba(255, 255, 255, 0.08);
-                color: #999;
-            }
-        }
-
-        .contact a {
-            color: #0071e3;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact a:hover {
+        .contact-channel a {
+            color: #eedfc2;
+            font-weight: bold;
             text-decoration: underline;
         }
-
+        .contact-channel a:hover {
+            color: #ff6b6b;
+        }
+        .alt-email {
+            font-size: 13px;
+            color: #8a7b63;
+            margin-top: 10px;
+        }
+        .alt-email-val {
+            color: #eedfc2;
+        }
+        .linkedin-link {
+            display: inline-block;
+            text-align: center;
+            padding: 8px 16px;
+            border: 1px solid #eedfc2;
+            color: #eedfc2;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+        .linkedin-link:hover {
+            background-color: #eedfc2;
+            color: #1c1812;
+        }
         footer {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-top: 36px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-            font-size: 13px;
-            color: #999;
+            margin-top: 24px;
+            font-size: 11px;
+            color: #8a7b63;
         }
-
-        @media (prefers-color-scheme: dark) {
-            footer {
-                border-top: 1px solid rgba(255, 255, 255, 0.08);
-                color: #666;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .card {
-                padding: 36px 28px;
-            }
-
-            h1 {
-                font-size: 28px;
-            }
-
-            footer {
-                flex-direction: column;
-                gap: 8px;
-                text-align: center;
-            }
+        @media (max-width: 480px) {
+            .archive-card { padding: 40px 24px; }
+            h1 { font-size: 30px; }
+            .body-text { font-size: 15px; }
+            footer { flex-direction: column; gap: 8px; text-align: center; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="card">
-            <div class="badge">Security Research & Disclosure</div>
-            <h1>Naveen S – Security Research</h1>
-            <div class="subtitle">Security Researcher · Responsible Disclosure</div>
-            <p class="note">
-                This domain is used for security research and coordinated vulnerability disclosure.
-            </p>
-            <a href="https://www.linkedin.com/in/naveens72/" class="cta">View profile on LinkedIn →</a>
-            <div class="contact">
-                <strong>Contact:</strong> <a href="mailto:naveenyes2003@gmail.com">naveenyes2003@gmail.com</a>
+        <main class="archive-card">
+            <h1>Naveen S</h1>
+            <div class="subtitle">Security Research &amp; Disclosure</div>
+            <p class="body-text">This domain is used for security research and coordinated vulnerability disclosure.</p>
+            <div class="contact-channel">
+                <span>Contact: </span>
+                <a href="mailto:security@naveen-research.com">security@naveen-research.com</a>
+                <div class="alt-email">alt email: <span class="alt-email-val">naveenyes2003@gmail.com</span></div>
             </div>
-            <footer>
-                <span>naveen-research.com</span>
-                <span>For PSIRT / security response only</span>
-            </footer>
-        </div>
+            <a href="https://www.linkedin.com/in/naveens72/" class="linkedin-link">LinkedIn</a>
+        </main>
+        <footer>
+            <span>naveen-research.com</span>
+            <span>For PSIRT / security response only</span>
+        </footer>
     </div>
 </body>
 </html>
